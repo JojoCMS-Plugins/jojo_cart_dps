@@ -97,7 +97,7 @@ class DPSPXPost
     $this->post_username = $post_username;
     $this->post_password = $post_password;
 
-    $this->dps_url       = 'https://www.paymentexpress.com/pxpost.aspx';
+    $this->dps_url       = 'https://sec.paymentexpress.com/pxpost.aspx';
 
     $this->clearRequestElements();
   }
