@@ -101,10 +101,12 @@ class jojo_plugin_jojo_cart_dps extends JOJO_Plugin
         $success  = $params['TXN']['SUCCESS'];
         $response = $params['TXN'][$success];
 
-
         if ($success) {
-            //$receipt = array('Transaction reference' => $params['TXN']['DPSTXNREF'], 'Response' => $params['TXN']['RESPONSETEXT']);
-            $receipt = $response;
+            $receipt = array('Transaction Amount'        => $amount,
+                             'DPS transaction reference' => $params['TXN']['DPSTXNREF'],
+                             'Response'                  => $params['TXN']['RESPONSETEXT'],
+                             'Response text'             => $params['TXN']['HELPTEXT'],
+                             );
         } else {
             $receipt = array('HELPTEXT' => $params['TXN']['HELPTEXT'], 'DPSTXNREF' => $params['TXN']['DPSTXNREF']);
             $errors[] = $params['TXN']['HELPTEXT'];
