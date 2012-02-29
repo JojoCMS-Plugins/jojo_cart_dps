@@ -13,7 +13,7 @@ function process_request($name, $amount, $ccnum, $ccmm, $ccyy, $merchRef)
     $cmdDoTxnTransaction .= "<TxnType>Purchase</TxnType>";
     $cmdDoTxnTransaction .= "<MerchantReference>$merchRef</MerchantReference>";
     $cmdDoTxnTransaction .= "</Txn>";
-    $URL = "www.paymentexpress.com/pxpost.aspx";
+    $URL = "sec.paymentexpress.com/pxpost.aspx";
     			 
     $ch = curl_init(); 
     curl_setopt($ch, CURLOPT_URL,"https://".$URL);
